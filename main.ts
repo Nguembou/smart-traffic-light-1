@@ -4,9 +4,12 @@ radio.onReceivedNumber(function (receivedNumber) {
     }
 })
 function green () {
-    range_2 = strip.range(3, 1)
+    range_2 = strip.range(2, 1)
     range_2.showColor(neopixel.colors(NeoPixelColors.Green))
-    strip.clear()
+    range_2 = strip.range(1, 1)
+    range_2.showColor(neopixel.colors(NeoPixelColors.Black))
+    range_2 = strip.range(0, 1)
+    range_2.showColor(neopixel.colors(NeoPixelColors.Black))
 }
 input.onButtonPressed(Button.A, function () {
     for (let index = 0; index < 9; index++) {
@@ -40,6 +43,7 @@ input.onButtonPressed(Button.A, function () {
                 `)
         }
     }
+    counter = 9
 })
 input.onButtonPressed(Button.AB, function () {
 	
@@ -50,11 +54,15 @@ input.onButtonPressed(Button.B, function () {
 function red () {
     range_2 = strip.range(0, 1)
     range_2.showColor(neopixel.colors(NeoPixelColors.Red))
-    strip.clear()
+    range_2 = strip.range(1, 1)
+    range_2.showColor(neopixel.colors(NeoPixelColors.Black))
+    range_2 = strip.range(2, 1)
+    range_2.showColor(neopixel.colors(NeoPixelColors.Black))
 }
 let range_2: neopixel.Strip = null
 let counter = 0
 let strip: neopixel.Strip = null
+radio.setGroup(77)
 basic.showLeds(`
     . # # # .
     # # . . #
@@ -64,8 +72,8 @@ basic.showLeds(`
     `)
 strip = neopixel.create(DigitalPin.P16, 3, NeoPixelMode.RGB)
 strip.setBrightness(70)
-radio.setGroup(77)
 counter = 9
+green()
 basic.forever(function () {
 	
 })
