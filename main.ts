@@ -16,7 +16,7 @@ input.onButtonPressed(Button.A, function () {
         basic.pause(500)
         counter += -1
         if (counter == 0) {
-            red()
+            green()
             basic.showLeds(`
                 . . # . .
                 # # # # #
@@ -33,7 +33,7 @@ input.onButtonPressed(Button.A, function () {
         basic.pause(500)
         counter += -1
         if (counter == 0) {
-            green()
+            red()
             basic.showLeds(`
                 . # # # .
                 # # . . #
@@ -70,10 +70,10 @@ basic.showLeds(`
     # . . # #
     . # # # .
     `)
-strip = neopixel.create(DigitalPin.P16, 3, NeoPixelMode.RGB)
+strip = neopixel.create(DigitalPin.P0, 3, NeoPixelMode.RGB)
 strip.setBrightness(70)
 counter = 9
-green()
+red()
 basic.forever(function () {
 	
 })
