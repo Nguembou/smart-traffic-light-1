@@ -18,7 +18,7 @@ def on_button_pressed_a():
         basic.pause(500)
         counter += -1
         if counter == 0:
-            red()
+            green()
             basic.show_leds("""
                 . . # . .
                                 # # # # #
@@ -33,7 +33,7 @@ def on_button_pressed_a():
         basic.pause(500)
         counter += -1
         if counter == 0:
-            green()
+            red()
             basic.show_leds("""
                 . # # # .
                                 # # . . #
@@ -74,7 +74,7 @@ basic.show_leds("""
 strip = neopixel.create(DigitalPin.P0, 3, NeoPixelMode.RGB)
 strip.set_brightness(70)
 counter = 9
-green()
+red()
 
 def on_forever():
     pass
