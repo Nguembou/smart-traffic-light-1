@@ -33,7 +33,6 @@ input.onButtonPressed(Button.A, function () {
         basic.pause(500)
         counter += -1
         if (counter == 0) {
-            red()
             basic.showLeds(`
                 . # # # .
                 # # . . #
@@ -41,16 +40,25 @@ input.onButtonPressed(Button.A, function () {
                 # . . # #
                 . # # # .
                 `)
+            basic.pause(500)
+            orange()
+            basic.pause(1000)
+            red()
         }
     }
     counter = 9
 })
-input.onButtonPressed(Button.AB, function () {
-	
-})
 input.onButtonPressed(Button.B, function () {
 	
 })
+function orange () {
+    range_2 = strip.range(1, 1)
+    range_2.showColor(neopixel.colors(NeoPixelColors.Orange))
+    range_2 = strip.range(2, 1)
+    range_2.showColor(neopixel.colors(NeoPixelColors.Black))
+    range_2 = strip.range(0, 1)
+    range_2.showColor(neopixel.colors(NeoPixelColors.Black))
+}
 function red () {
     range_2 = strip.range(0, 1)
     range_2.showColor(neopixel.colors(NeoPixelColors.Red))
@@ -70,7 +78,7 @@ basic.showLeds(`
     # . . # #
     . # # # .
     `)
-strip = neopixel.create(DigitalPin.P0, 3, NeoPixelMode.RGB)
+strip = neopixel.create(DigitalPin.P16, 3, NeoPixelMode.RGB)
 strip.setBrightness(70)
 counter = 9
 red()
